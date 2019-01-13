@@ -1,0 +1,97 @@
+
+@charset "UTF-8";
+@font-face {
+  font-family: Font;
+  src: url(../fonts/MonumentGroteskTrial-Regular.woff);
+}
+// ========= 客製化區 =========
+@import 'custom_style/variables'; // 變數
+@import 'custom_style/font'; // landing page layout
+// ========= base =========
+@import 'base/reset'; // doppler reset
+@import 'base/dophlex'; // dopplex
+// ========= element =========
+@import 'element/btn'; // btn & calltoaction
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+* {
+  font-family: 'Font'
+}
+
+.bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  img {
+    display: block;
+    height: 100%;
+    width: auto;
+    left: 0;
+    animation: move 10s linear 0s infinite both;
+  }
+}
+
+.marquee {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  font-size: 55vw;
+  line-height: 1.1;
+  mix-blend-mode: exclusion;
+
+  div {
+    height: 100%;
+    display: flex;
+    animation: moveRe 15s linear 0s infinite both;
+  }
+}
+
+@keyframes move {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes moveRe {
+  0% { transform: translateX(50%); }
+  100% { transform: translateX(-50%); }
+}
+
+#nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+
+  h1 {
+    padding-left: 10px;
+  }
+}
+
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  font-size: 12px;
+
+  a {
+    display: block;
+  }
+
+  .arrow-icon {
+    display: inline-block;
+    margin: 0 30px;
+  }
+}
